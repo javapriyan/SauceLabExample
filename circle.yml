@@ -2,4 +2,5 @@ machine:
   java:
     version: openjdk7
 test:
-    /test/java/org/seleniummonster/com/
+    override:
+    - cd sauce-project/

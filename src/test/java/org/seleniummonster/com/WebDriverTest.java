@@ -31,6 +31,7 @@ public class WebDriverTest {
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         capabilities.setCapability("version", "17");
         capabilities.setCapability("platform", Platform.XP);
+        capabilities.setCapability("name","CIRCLE CI TEST");
         this.driver = new RemoteWebDriver(
                 new URL("http://javapriyan:f3b5346a-aaf7-44a2-b8cb-b89021bf7cde@ondemand.saucelabs.com:80/wd/hub"),
                 capabilities);
