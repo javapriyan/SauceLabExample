@@ -1,12 +1,8 @@
 package org.seleniummonster.com;
 
-import com.saucelabs.common.SauceOnDemandAuthentication;
-import com.saucelabs.common.SauceOnDemandSessionIdProvider;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.TestName;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -19,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Simple {@link RemoteWebDriver} test that demonstrates how to run your Selenium tests with <a href="http://saucelabs.com/ondemand">Sauce OnDemand</a>.
  * *
- * @author Ross Rowe
+ * @author Karthikeyan Annamalai
  */
 public class WebDriverTest {
 
@@ -33,13 +29,13 @@ public class WebDriverTest {
         capabilities.setCapability("platform", Platform.XP);
         capabilities.setCapability("name","CIRCLE CI TEST");
         this.driver = new RemoteWebDriver(
-                new URL("http://javapriyan:f3b5346a-aaf7-44a2-b8cb-b89021bf7cde@ondemand.saucelabs.com:80/wd/hub"),
+                new URL("http://${username}:${saucekey}@ondemand.saucelabs.com:80/wd/hub"),
                 capabilities);
     }
 
     @Test
     public void webDriver() throws Exception {
-        driver.get("http://www.seleniummonster.com/");
+        driver.get("https://purfitkeller.giga-fit.com/testimonials.html");
         assertEquals("Selenium Monster | Test Automation in Monster’s way", driver.getTitle());
     }
 
