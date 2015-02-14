@@ -35,7 +35,7 @@ public class WebDriverTest {
 
     @Test
     public void webDriver() throws Exception {
-        driver.get("https://purfitkeller.giga-fit.com/testimonials.html");
+        driver.get("http://www.seleniummonster.com/");
         assertEquals("Selenium Monster | Test Automation in Monster’s way", driver.getTitle());
     }
 
